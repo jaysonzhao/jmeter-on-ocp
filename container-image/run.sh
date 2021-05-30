@@ -10,9 +10,9 @@ set -e
 # Thread size
 xss="512"
 # Maximum heap size
-xmx=$(($MEMORY_LIMIT*1024))
+xmx=$(($MEMORY_LIMIT/1024/1024-2048))
 # Initial Java heap size
-xms=$(($MEMORY_REQUEST))
+xms=$(($MEMORY_REQUEST/1024/1024))
 
 # export JVM_ARGS="-Xmn${xmn}m -Xms${xms}m -Xmx${xmx}m"
 export JVM_ARGS="-Xms${xms}m -Xmx${xmx}m -Xss${xss}k"
