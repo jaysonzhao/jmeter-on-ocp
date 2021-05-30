@@ -72,7 +72,7 @@ oc process -f templates/jmeter-bc.yaml -p APP_NAMESPACE=$APP_NAMESPACE -p GIT_RE
 First, create a ConfigMap that will store your application configuration:
 [source, bash]
 ----
-TEST="example"
+JMETER_TEST="example"
 oc create configmap jmeter-config -n $APP_NAMESPACE \
 --from-file=${JMETER_TEST}.jmx=tests/${JMETER_TEST}/jmeter-test-plan.jmx \
 --from-file=config.properties=tests/${JMETER_TEST}/config-k8s.properties
