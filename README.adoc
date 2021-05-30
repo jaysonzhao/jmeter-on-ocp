@@ -74,7 +74,7 @@ First, create a ConfigMap that will store your application configuration:
 ----
 JMETER_TEST="example"
 oc create configmap jmeter-config -n $APP_NAMESPACE \
---from-file=${JMETER_TEST}.jmx=tests/${JMETER_TEST}/jmeter-test-plan.jmx \
+--from-file=${JMETER_TEST}.jmx=tests/${JMETER_TEST}/test.jmx \
 --from-file=config.properties=tests/${JMETER_TEST}/config-k8s.properties
 ----
 
